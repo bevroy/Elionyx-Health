@@ -157,12 +157,12 @@ export default function ElionyxHealthLandingPage() {
               <div className='grid gap-4'>
                 <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
                   <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
-                    RealDiag diagnostic interface
+                    Elionyx Health
                   </div>
                   <img
-                    src='/ui/realdiag-screen.png'
-                    alt='RealDiag diagnostic interface'
-                    className='h-auto w-full rounded-xl border border-slate-200 object-cover'
+                    src='/ui/analytics-placeholder.png'
+                    alt='Elionyx Health logo'
+                    className='h-56 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
                   />
                 </div>
 
@@ -173,19 +173,19 @@ export default function ElionyxHealthLandingPage() {
                     </div>
                     <img
                       src='/ui/critmatch-placeholder.png'
-                      alt='CritMatch placeholder interface'
-                      className='h-48 w-full rounded-xl border border-slate-200 object-cover'
+                      alt='CritMatch logo'
+                      className='h-48 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
                     />
                   </div>
 
                   <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
                     <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
-                      Analytics placeholder
+                      RealDiag
                     </div>
                     <img
-                      src='/ui/analytics-placeholder.png'
-                      alt='Analytics placeholder interface'
-                      className='h-48 w-full rounded-xl border border-slate-200 object-cover'
+                      src='/ui/realdiag-screen.png'
+                      alt='RealDiag logo'
+                      className='h-48 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
                     />
                   </div>
                 </div>
