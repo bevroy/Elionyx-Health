@@ -10,6 +10,7 @@ Public marketing website for Elionyx Health.
 - Main page component: src/App.jsx
 - Public assets: public/branding and public/ui
 - This folder is the deployment source for Netlify once app scaffolding/build scripts are added.
+- Canonical source logos: public/branding/source
 
 ## Local Development
 - Install: npm install
