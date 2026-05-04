@@ -92,17 +92,19 @@ export default function ElionyxHealthLandingPage() {
 
   return (
     <div className='min-h-screen bg-[#f4f6f7] text-slate-900'>
-      <header className='sticky top-0 z-50 border-b border-slate-800 bg-[#041E42]/95 backdrop-blur'>
+      <header className='sticky top-0 z-50 bg-gradient-to-r from-[#041E42] to-[#0d3d38] backdrop-blur'>
         <Container className='flex items-center justify-between gap-6 py-3'>
-          <a href='#top' className='shrink-0'>
-            <img
-              src='/branding/elionyx-logo-horizontal-light.png'
-              alt='Elionyx Health'
-              className='h-12 w-auto sm:h-14'
-              onError={(e) => {
-                e.currentTarget.style.display = 'none';
-              }}
-            />
+          <a href='#top' className='flex shrink-0 items-center gap-4'>
+            <div className='flex items-center justify-center rounded-2xl bg-white px-4 py-2 shadow-md'>
+              <img
+                src='/branding/elionyx-logo-horizontal-light.png'
+                alt='Elionyx Health'
+                className='h-12 w-auto sm:h-14 object-contain'
+                onError={(e) => {
+                  e.currentTarget.style.display = 'none';
+                }}
+              />
+            </div>
           </a>
 
           <nav className='hidden flex-1 items-center justify-center gap-8 text-sm text-slate-300 lg:flex'>
@@ -116,9 +118,9 @@ export default function ElionyxHealthLandingPage() {
 
           <a
             href='#contact'
-            className='inline-flex items-center gap-2 rounded-lg bg-teal-500 px-4 py-2.5 text-sm font-medium text-white transition hover:bg-teal-400'
+            className='inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10'
           >
-            Request Demo <ArrowRight className='h-4 w-4' />
+            Request Demo
           </a>
         </Container>
       </header>
