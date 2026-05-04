@@ -97,7 +97,7 @@ export default function ElionyxHealthLandingPage() {
           <a href='#top' className='flex shrink-0 items-center gap-4'>
             <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-md'>
               <img
-                src='/branding/elionyx-logo-horizontal-light.png'
+                src='/branding/eh-logo-simple.png'
                 alt='Elionyx Health'
                 className='h-full w-full object-contain'
                 onError={(e) => {
