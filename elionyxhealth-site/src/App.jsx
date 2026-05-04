@@ -95,7 +95,7 @@ export default function ElionyxHealthLandingPage() {
       <header className='sticky top-0 z-50 bg-gradient-to-r from-[#041E42] to-[#0d3d38] backdrop-blur'>
         <Container className='flex items-center justify-between gap-6 py-3'>
           <a href='#top' className='flex shrink-0 items-center gap-4'>
-            <div className='flex h-16 w-16 items-center justify-center rounded-2xl bg-white p-2 shadow-md'>
+            <div className='flex h-[5.5rem] w-36 items-center justify-center rounded-[1.6rem] bg-white py-3 pr-3 pl-4 shadow-md sm:h-28 sm:w-44 sm:py-4 sm:pr-4 sm:pl-5'>
               <img
                 src='/branding/eh-logo-simple.png'
                 alt='Elionyx Health'
@@ -107,7 +107,7 @@ export default function ElionyxHealthLandingPage() {
             </div>
             <div>
               <div className='text-lg font-bold leading-tight text-white'>Elionyx Health</div>
-              <div className='text-xs text-slate-300'>Intelligent Infrastructure for Clinical Decision-Making</div>
+              <div className='text-xs text-teal-300'>Intelligent Infrastructure for Clinical Decision-Making</div>
             </div>
           </a>
 
