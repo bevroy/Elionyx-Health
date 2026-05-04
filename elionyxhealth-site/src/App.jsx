@@ -92,12 +92,21 @@ export default function ElionyxHealthLandingPage() {
 
   return (
     <div className='min-h-screen bg-[#f4f6f7] text-slate-900'>
+      <div className='bg-[#041E42] pt-8'>
+        <Container className='pb-4'>
+          <img
+            src='/branding/elionyx-logo-horizontal-light.png'
+            alt='Elionyx Health'
+            className='mx-auto h-16 w-auto sm:h-20'
+            onError={(e) => {
+              e.currentTarget.style.display = 'none';
+            }}
+          />
+        </Container>
+      </div>
+
       <header className='sticky top-0 z-50 border-b border-slate-800 bg-[#041E42]/95 backdrop-blur'>
         <Container className='flex items-center justify-between py-4'>
-          <a href='#top' className='text-sm font-semibold tracking-[0.22em] text-white'>
-            ELIONYX
-          </a>
-
           <nav className='hidden items-center gap-8 text-sm text-slate-300 md:flex'>
             <a href='#platform' className='transition hover:text-white'>Platform</a>
             <a href='#realdiag' className='transition hover:text-white'>RealDiag</a>
@@ -120,14 +129,6 @@ export default function ElionyxHealthLandingPage() {
         <section className='bg-[#041E42] text-white'>
           <Container className='grid gap-14 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28'>
             <div>
-              <img
-                src='/branding/elionyx-logo-horizontal-light.png'
-                alt='Elionyx Health'
-                className='h-16 w-auto sm:h-20'
-                onError={(e) => {
-                  e.currentTarget.style.display = 'none';
-                }}
-              />
               <SectionEyebrow>Clinical Intelligence Platform</SectionEyebrow>
               <h1 className='mt-4 max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl'>
                 Intelligent Infrastructure for Clinical Decision-Making
