@@ -182,11 +182,16 @@ export default function ElionyxHealthLandingPage() {
                     <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
                       RealDiag
                     </div>
-                    <img
-                      src='/ui/realdiag-screen.png'
-                      alt='RealDiag logo'
-                      className='h-48 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
-                    />
+                    <video
+                      src='/ui/RealDiag-Product-Film.mp4'
+                      className='h-48 w-full rounded-xl border border-slate-200 bg-white object-cover'
+                      autoPlay
+                      muted
+                      loop
+                      playsInline
+                    >
+                      Your browser does not support the video tag.
+                    </video>
                   </div>
                 </div>
               </div>
@@ -246,11 +251,17 @@ export default function ElionyxHealthLandingPage() {
         <section id='realdiag' className='bg-white py-20'>
           <Container className='grid gap-14 lg:grid-cols-2 lg:items-center'>
             <div className='overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 shadow-sm'>
-              <img
-                src='/ui/realdiag-screen.png'
-                alt='RealDiag screen'
+              <video
+                src='/ui/RealDiag-Product-Film.mp4'
                 className='h-auto w-full rounded-xl border border-slate-200 object-cover'
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
 
             <div>
