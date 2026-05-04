@@ -106,8 +106,8 @@ export default function ElionyxHealthLandingPage() {
               />
             </div>
             <div>
-              <div className='text-lg font-bold leading-tight text-white'>Elionyx Health</div>
-              <div className='text-xs text-teal-300'>Intelligent Infrastructure for Clinical Decision-Making</div>
+              <div className='text-2xl font-bold leading-tight text-white sm:text-3xl'>Elionyx Health</div>
+              <div className='text-sm font-medium text-teal-300 sm:text-base'>Intelligent Infrastructure for Clinical Decision-Making</div>
             </div>
           </a>
 
