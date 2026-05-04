@@ -124,71 +124,77 @@ export default function ElionyxHealthLandingPage() {
       </header>
 
       <main id='top'>
-        <section className='bg-[#041E42] text-white'>
-          <Container className='grid gap-14 py-20 lg:grid-cols-[1.05fr_0.95fr] lg:items-center lg:py-28'>
-            <div>
-              <SectionEyebrow>Clinical Intelligence Platform</SectionEyebrow>
-              <h1 className='mt-4 max-w-3xl text-5xl font-semibold tracking-tight sm:text-6xl'>
-                Intelligent Infrastructure for Clinical Decision-Making
-              </h1>
-              <p className='mt-8 max-w-2xl text-lg leading-8 text-slate-300'>
-                Elionyx Health improves diagnostic clarity, optimizes patient routing, and accelerates research workflows through a unified clinical intelligence platform.
-              </p>
-              <div className='mt-10 flex flex-wrap gap-4'>
-                <a
-                  href='#contact'
-                  className='rounded-lg bg-teal-500 px-6 py-3 text-sm font-medium text-white transition hover:bg-teal-400'
-                >
-                  Request Demo
-                </a>
-                <a
-                  href='#platform'
-                  className='rounded-lg border border-white/20 px-6 py-3 text-sm font-medium text-white transition hover:bg-white/10'
-                >
-                  Partner With Us
-                </a>
-              </div>
-            </div>
-
-            <div className='rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/20'>
-              <div className='grid gap-4'>
-                <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
-                  <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
-                    Elionyx Health
+        <section className='bg-gradient-to-br from-[#041E42] via-[#0a3040] to-[#1a5248] text-white'>
+          <Container className='py-12 lg:py-16'>
+            <div className='rounded-3xl bg-gradient-to-br from-[#061f3a] to-[#1d5c50] px-8 py-14 shadow-2xl lg:px-14 lg:py-20'>
+              <div className='grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center'>
+                <div>
+                  <span className='inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/90 backdrop-blur-sm'>
+                    Clinical Intelligence Platform
+                  </span>
+                  <h1 className='mt-5 max-w-3xl text-5xl font-bold tracking-tight sm:text-6xl'>
+                    Intelligent Infrastructure for Clinical Decision-Making
+                  </h1>
+                  <p className='mt-8 max-w-2xl text-lg leading-8 text-slate-300'>
+                    Elionyx Health improves diagnostic clarity, optimizes patient routing, and accelerates research workflows through a unified clinical intelligence platform.
+                  </p>
+                  <div className='mt-10 flex flex-wrap gap-4'>
+                    <a
+                      href='#contact'
+                      className='rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-800 transition hover:bg-slate-100'
+                    >
+                      Request Demo
+                    </a>
+                    <a
+                      href='#platform'
+                      className='rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20'
+                    >
+                      Partner With Us
+                    </a>
                   </div>
-                  <img
-                    src='/ui/analytics-placeholder.png'
-                    alt='Elionyx Health logo'
-                    className='h-56 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
-                  />
                 </div>
 
-                <div className='grid gap-4 md:grid-cols-2'>
-                  <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
-                    <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
-                      CritMatch placeholder
+                <div className='rounded-[1.75rem] border border-slate-200 bg-white p-4 shadow-2xl shadow-slate-950/20'>
+                  <div className='grid gap-4'>
+                    <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
+                      <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
+                        Elionyx Health
+                      </div>
+                      <img
+                        src='/ui/analytics-placeholder.png'
+                        alt='Elionyx Health logo'
+                        className='h-56 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
+                      />
                     </div>
-                    <img
-                      src='/ui/critmatch-placeholder.png'
-                      alt='CritMatch logo'
-                      className='h-48 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
-                    />
-                  </div>
 
-                  <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
-                    <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
-                      RealDiag
+                    <div className='grid gap-4 md:grid-cols-2'>
+                      <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
+                        <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
+                          CritMatch placeholder
+                        </div>
+                        <img
+                          src='/ui/critmatch-placeholder.png'
+                          alt='CritMatch logo'
+                          className='h-48 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
+                        />
+                      </div>
+
+                      <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
+                        <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
+                          RealDiag
+                        </div>
+                        <video
+                          src='/ui/RealDiag-Product-Film.mp4'
+                          className='h-48 w-full rounded-xl border border-slate-200 bg-white object-cover'
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        >
+                          Your browser does not support the video tag.
+                        </video>
+                      </div>
                     </div>
-                    <video
-                      src='/ui/RealDiag-Product-Film.mp4'
-                      className='h-48 w-full rounded-xl border border-slate-200 bg-white object-cover'
-                      autoPlay
-                      muted
-                      loop
-                      playsInline
-                    >
-                      Your browser does not support the video tag.
-                    </video>
                   </div>
                 </div>
               </div>
