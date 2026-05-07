@@ -121,7 +121,9 @@ export default function ElionyxHealthLandingPage() {
           </nav>
 
           <a
-            href='mailto:info@elionyxhealth.com?subject=Request%20a%20demo'
+            href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Request%20a%20demo'
+            target='_blank'
+            rel='noopener noreferrer'
             className='inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10'
           >
             Request Demo
@@ -146,13 +148,17 @@ export default function ElionyxHealthLandingPage() {
                   </p>
                   <div className='mt-10 flex flex-wrap gap-4'>
                     <a
-                      href='mailto:info@elionyxhealth.com?subject=Request%20a%20demo'
+                      href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Request%20a%20demo'
+                      target='_blank'
+                      rel='noopener noreferrer'
                       className='rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-800 transition hover:bg-slate-100'
                     >
                       Request Demo
                     </a>
                     <a
-                      href='mailto:info@elionyxhealth.com?subject=Partnership%20inquiry'
+                      href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Partnership%20inquiry'
+                      target='_blank'
+                      rel='noopener noreferrer'
                       className='rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20'
                     >
                       Partner With Us
@@ -292,7 +298,9 @@ export default function ElionyxHealthLandingPage() {
 
               <div className='mt-8'>
                 <a
-                  href='mailto:info@elionyxhealth.com?subject=RealDiag%20demo%20request'
+                  href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=RealDiag%20demo%20request'
+                  target='_blank'
+                  rel='noopener noreferrer'
                   className='inline-flex items-center gap-2 rounded-lg bg-[#041E42] px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-900'
                 >
                   Request RealDiag Demo <ChevronRight className='h-4 w-4' />
@@ -405,7 +413,9 @@ export default function ElionyxHealthLandingPage() {
 
             <div className='mt-10 flex flex-wrap items-center justify-center gap-4'>
               <a
-                href='mailto:info@elionyxhealth.com'
+                href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Hello%20Elionyx%20Health'
+                target='_blank'
+                rel='noopener noreferrer'
                 className='rounded-lg bg-[#041E42] px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-900'
               >
                 Contact Elionyx Health
