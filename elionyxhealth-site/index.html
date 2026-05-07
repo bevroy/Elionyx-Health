@@ -32,6 +32,20 @@
   </head>
   <body>
     <div id="root"></div>
+
+    <!--
+      Hidden static form so Netlify's build-time bot detects and registers
+      the "contact" form. The visible React form below POSTs to this name.
+      Do not remove. See: https://docs.netlify.com/forms/setup/#javascript-forms
+    -->
+    <form name="contact" netlify netlify-honeypot="bot-field" hidden>
+      <input type="text" name="name" />
+      <input type="email" name="email" />
+      <input type="text" name="organization" />
+      <input type="text" name="topic" />
+      <textarea name="message"></textarea>
+    </form>
+
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>

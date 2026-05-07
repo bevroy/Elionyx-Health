@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ArrowRight,
   ChevronRight,
@@ -87,6 +87,182 @@ function Container({ children, className = '' }) {
   return <div className={`mx-auto max-w-7xl px-6 lg:px-8 ${className}`}>{children}</div>;
 }
 
+function encodeFormData(data) {
+  return Object.keys(data)
+    .map((k) => encodeURIComponent(k) + '=' + encodeURIComponent(data[k]))
+    .join('&');
+}
+
+function ContactForm() {
+  const [status, setStatus] = useState('idle'); // 'idle' | 'submitting' | 'success' | 'error'
+  const [errorMsg, setErrorMsg] = useState('');
+
+  async function handleSubmit(e) {
+    e.preventDefault();
+    setStatus('submitting');
+    setErrorMsg('');
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    // Honeypot: if filled, silently succeed.
+    if (formData.get('bot-field')) {
+      setStatus('success');
+      form.reset();
+      return;
+    }
+
+    const payload = {
+      'form-name': 'contact',
+      name: formData.get('name') || '',
+      email: formData.get('email') || '',
+      organization: formData.get('organization') || '',
+      topic: formData.get('topic') || 'General',
+      message: formData.get('message') || '',
+    };
+
+    try {
+      const res = await fetch('/', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        body: encodeFormData(payload),
+      });
+      if (!res.ok) {
+        throw new Error(`Submission failed (${res.status})`);
+      }
+      setStatus('success');
+      form.reset();
+    } catch (err) {
+      setStatus('error');
+      setErrorMsg(err?.message || 'Submission failed. Please email info@elionyxhealth.com directly.');
+    }
+  }
+
+  if (status === 'success') {
+    return (
+      <div className='mt-10 rounded-3xl border border-teal-200 bg-white p-8 text-center shadow-sm'>
+        <h3 className='text-xl font-semibold text-slate-950'>Thank you — we received your message.</h3>
+        <p className='mt-3 text-sm leading-7 text-slate-600'>
+          A member of the Elionyx Health team will follow up from{' '}
+          <a href='mailto:info@elionyxhealth.com' className='font-medium text-teal-700 underline-offset-4 hover:underline'>
+            info@elionyxhealth.com
+          </a>
+          .
+        </p>
+        <button
+          type='button'
+          onClick={() => setStatus('idle')}
+          className='mt-6 rounded-lg border border-slate-300 bg-white px-5 py-2 text-sm font-medium text-slate-700 transition hover:border-slate-400'
+        >
+          Send another message
+        </button>
+      </div>
+    );
+  }
+
+  return (
+    <form
+      name='contact'
+      method='POST'
+      data-netlify='true'
+      data-netlify-honeypot='bot-field'
+      onSubmit={handleSubmit}
+      className='mt-10 grid gap-5 rounded-3xl border border-slate-200 bg-white p-8 shadow-sm sm:p-10'
+      noValidate
+    >
+      {/* Required by Netlify for SPA submissions */}
+      <input type='hidden' name='form-name' value='contact' />
+      {/* Honeypot field — humans leave it blank */}
+      <p className='hidden'>
+        <label>
+          Don’t fill this out: <input name='bot-field' tabIndex='-1' autoComplete='off' />
+        </label>
+      </p>
+
+      <div className='grid gap-5 sm:grid-cols-2'>
+        <label className='block'>
+          <span className='text-sm font-medium text-slate-700'>Your name</span>
+          <input
+            type='text'
+            name='name'
+            required
+            autoComplete='name'
+            className='mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30'
+          />
+        </label>
+        <label className='block'>
+          <span className='text-sm font-medium text-slate-700'>Email</span>
+          <input
+            type='email'
+            name='email'
+            required
+            autoComplete='email'
+            className='mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30'
+          />
+        </label>
+      </div>
+
+      <div className='grid gap-5 sm:grid-cols-2'>
+        <label className='block'>
+          <span className='text-sm font-medium text-slate-700'>Organization</span>
+          <input
+            type='text'
+            name='organization'
+            autoComplete='organization'
+            className='mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30'
+          />
+        </label>
+        <label className='block'>
+          <span className='text-sm font-medium text-slate-700'>Topic</span>
+          <select
+            name='topic'
+            defaultValue='Demo request'
+            className='mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30'
+          >
+            <option>Demo request</option>
+            <option>Partnership inquiry</option>
+            <option>RealDiag</option>
+            <option>CritMatch</option>
+            <option>Investor / press</option>
+            <option>General</option>
+          </select>
+        </label>
+      </div>
+
+      <label className='block'>
+        <span className='text-sm font-medium text-slate-700'>Message</span>
+        <textarea
+          name='message'
+          required
+          rows={5}
+          className='mt-2 w-full rounded-lg border border-slate-300 bg-white px-4 py-2.5 text-sm text-slate-900 shadow-sm focus:border-teal-500 focus:outline-none focus:ring-2 focus:ring-teal-500/30'
+        />
+      </label>
+
+      {status === 'error' && (
+        <div className='rounded-lg border border-rose-200 bg-rose-50 px-4 py-3 text-sm text-rose-700'>
+          {errorMsg}
+        </div>
+      )}
+
+      <div className='flex flex-wrap items-center gap-4'>
+        <button
+          type='submit'
+          disabled={status === 'submitting'}
+          className='inline-flex items-center justify-center rounded-lg bg-[#041E42] px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-900 disabled:cursor-not-allowed disabled:opacity-60'
+        >
+          {status === 'submitting' ? 'Sending…' : 'Send message'}
+        </button>
+        <a
+          href='mailto:info@elionyxhealth.com'
+          className='text-sm font-medium text-slate-600 underline-offset-4 hover:text-slate-900 hover:underline'
+        >
+          Or email us directly
+        </a>
+      </div>
+    </form>
+  );
+}
+
 export default function ElionyxHealthLandingPage() {
   const currentYear = new Date().getFullYear();
 
@@ -121,9 +297,7 @@ export default function ElionyxHealthLandingPage() {
           </nav>
 
           <a
-            href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Request%20a%20demo'
-            target='_blank'
-            rel='noopener noreferrer'
+            href='#contact'
             className='inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10'
           >
             Request Demo
@@ -148,17 +322,13 @@ export default function ElionyxHealthLandingPage() {
                   </p>
                   <div className='mt-10 flex flex-wrap gap-4'>
                     <a
-                      href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Request%20a%20demo'
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      href='#contact'
                       className='rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-800 transition hover:bg-slate-100'
                     >
                       Request Demo
                     </a>
                     <a
-                      href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Partnership%20inquiry'
-                      target='_blank'
-                      rel='noopener noreferrer'
+                      href='#contact'
                       className='rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20'
                     >
                       Partner With Us
@@ -298,9 +468,7 @@ export default function ElionyxHealthLandingPage() {
 
               <div className='mt-8'>
                 <a
-                  href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=RealDiag%20demo%20request'
-                  target='_blank'
-                  rel='noopener noreferrer'
+                  href='#contact'
                   className='inline-flex items-center gap-2 rounded-lg bg-[#041E42] px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-900'
                 >
                   Request RealDiag Demo <ChevronRight className='h-4 w-4' />
@@ -404,29 +572,20 @@ export default function ElionyxHealthLandingPage() {
         </section>
 
         <section id='contact' className='border-t border-slate-200 bg-[#eef3f4] py-20'>
-          <Container className='max-w-4xl text-center'>
-            <SectionEyebrow>Contact</SectionEyebrow>
-            <SectionTitle>Ready to discuss a demo, pilot, or partnership?</SectionTitle>
-            <p className='mt-5 text-lg leading-8 text-slate-600'>
-              Use this site as the public front door for Elionyx Health, with deeper product demos and investor materials hosted privately as needed.
-            </p>
-
-            <div className='mt-10 flex flex-wrap items-center justify-center gap-4'>
-              <a
-                href='https://mail.google.com/mail/?view=cm&fs=1&to=info@elionyxhealth.com&su=Hello%20Elionyx%20Health'
-                target='_blank'
-                rel='noopener noreferrer'
-                className='rounded-lg bg-[#041E42] px-6 py-3 text-sm font-medium text-white transition hover:bg-slate-900'
-              >
-                Contact Elionyx Health
-              </a>
-              <a
-                href='#top'
-                className='rounded-lg border border-slate-300 bg-white px-6 py-3 text-sm font-medium text-slate-700 transition hover:border-slate-400'
-              >
-                Back to Top
-              </a>
+          <Container className='max-w-3xl'>
+            <div className='text-center'>
+              <SectionEyebrow>Contact</SectionEyebrow>
+              <SectionTitle>Ready to discuss a demo, pilot, or partnership?</SectionTitle>
+              <p className='mt-5 text-lg leading-8 text-slate-600'>
+                Tell us a little about you and we’ll respond from{' '}
+                <a href='mailto:info@elionyxhealth.com' className='font-medium text-teal-700 underline-offset-4 hover:underline'>
+                  info@elionyxhealth.com
+                </a>
+                .
+              </p>
             </div>
+
+            <ContactForm />
           </Container>
         </section>
       </main>
