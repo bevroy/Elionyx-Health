@@ -121,7 +121,7 @@ export default function ElionyxHealthLandingPage() {
           </nav>
 
           <a
-            href='#contact'
+            href='mailto:info@elionyxhealth.com?subject=Request%20a%20demo'
             className='inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-medium text-white transition hover:bg-white/10'
           >
             Request Demo
@@ -146,13 +146,13 @@ export default function ElionyxHealthLandingPage() {
                   </p>
                   <div className='mt-10 flex flex-wrap gap-4'>
                     <a
-                      href='#contact'
+                      href='mailto:info@elionyxhealth.com?subject=Request%20a%20demo'
                       className='rounded-lg bg-white px-6 py-3 text-sm font-semibold text-teal-800 transition hover:bg-slate-100'
                     >
                       Request Demo
                     </a>
                     <a
-                      href='#platform'
+                      href='mailto:info@elionyxhealth.com?subject=Partnership%20inquiry'
                       className='rounded-lg border border-white/20 bg-white/10 px-6 py-3 text-sm font-medium text-white backdrop-blur-sm transition hover:bg-white/20'
                     >
                       Partner With Us
@@ -176,12 +176,12 @@ export default function ElionyxHealthLandingPage() {
                     <div className='grid gap-4 md:grid-cols-2'>
                       <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
                         <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
-                          CritMatch placeholder
+                          CritMatch
                         </div>
                         <img
-                          src='/ui/critmatch-placeholder.png'
+                          src='/branding/critmatch-logo-dark.png'
                           alt='CritMatch logo'
-                          className='h-48 w-full rounded-xl border border-slate-200 bg-white p-4 object-contain'
+                          className='h-48 w-full rounded-xl border border-slate-200 bg-white p-6 object-contain'
                         />
                       </div>
 
@@ -189,16 +189,11 @@ export default function ElionyxHealthLandingPage() {
                         <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
                           RealDiag
                         </div>
-                        <video
-                          src='/ui/RealDiag-Product-Film.mp4'
-                          className='h-48 w-full rounded-xl border border-slate-200 bg-white object-cover'
-                          autoPlay
-                          muted
-                          loop
-                          playsInline
-                        >
-                          Your browser does not support the video tag.
-                        </video>
+                        <img
+                          src='/branding/realdiag-logo-dark.png'
+                          alt='RealDiag logo'
+                          className='h-48 w-full rounded-xl border border-slate-200 bg-white p-6 object-contain'
+                        />
                       </div>
                     </div>
                   </div>
@@ -297,7 +292,7 @@ export default function ElionyxHealthLandingPage() {
 
               <div className='mt-8'>
                 <a
-                  href='#contact'
+                  href='mailto:info@elionyxhealth.com?subject=RealDiag%20demo%20request'
                   className='inline-flex items-center gap-2 rounded-lg bg-[#041E42] px-5 py-3 text-sm font-medium text-white transition hover:bg-slate-900'
                 >
                   Request RealDiag Demo <ChevronRight className='h-4 w-4' />
@@ -330,20 +325,26 @@ export default function ElionyxHealthLandingPage() {
                 ))}
               </div>
 
-              <div className='mt-8 rounded-3xl border border-dashed border-slate-300 bg-white p-6'>
-                <div className='text-sm font-semibold uppercase tracking-[0.18em] text-slate-500'>Placeholder status</div>
+              <div className='mt-8 rounded-3xl border border-slate-200 bg-white p-6'>
+                <div className='text-sm font-semibold uppercase tracking-[0.18em] text-slate-500'>Demo preview</div>
                 <p className='mt-3 text-sm leading-7 text-slate-600'>
-                  Expanded CritMatch product interface currently in development. Branded placeholder visuals should be used until the live product screens are ready.
+                  Watch the latest CritMatch product demo showing the matching and recruitment workflow in action.
                 </p>
               </div>
             </div>
 
             <div className='overflow-hidden rounded-[2rem] border border-slate-200 bg-white p-4 shadow-sm'>
-              <img
-                src='/ui/critmatch-placeholder.png'
-                alt='CritMatch placeholder screen'
+              <video
+                src='/ui/CM-demo.mp4'
                 className='h-auto w-full rounded-xl border border-slate-200 object-cover'
-              />
+                autoPlay
+                muted
+                loop
+                playsInline
+                controls
+              >
+                Your browser does not support the video tag.
+              </video>
             </div>
           </Container>
         </section>
