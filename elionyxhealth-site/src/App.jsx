@@ -505,7 +505,7 @@ export default function ElionyxHealthLandingPage() {
                   <li>AI/digital health innovation</li>
                 </ul>
                 <p className='mb-2'>If your organization is interested in participating in the validation process for next-generation diagnostic support technology, we would welcome a conversation.</p>
-                <p className='mb-2'>Please comment below or send a direct message to learn more.</p>
+                <p className='mb-2'>Please contact us to learn more.</p>
                 <div className='mt-2 text-xs text-teal-700'>#HealthcareInnovation #DigitalHealth #ClinicalResearch #ArtificialIntelligence #ClinicalDecisionSupport #HealthIT #Diagnostics #MedicalInnovation #RealWorldEvidence #ClinicalValidation #AIinHealthcare #RealDiag</div>
               </CollapsibleNotice>
               <SectionEyebrow>RealDiag</SectionEyebrow>
@@ -591,7 +591,7 @@ export default function ElionyxHealthLandingPage() {
                     <li>Research recruitment challenges</li>
                     <li>Innovation and AI adoption initiatives</li>
                   </ul>
-                  <p className='mb-2'>If your organization is interested in participating in the validation of next-generation cohort discovery technology, please comment below or send a direct message.</p>
+                  <p className='mb-2'>If your organization is interested in participating in the validation of next-generation cohort discovery technology, please contact us.</p>
                   <div className='mt-2 text-xs text-teal-700'>#ClinicalResearch #DigitalHealth #HealthcareInnovation #AIinHealthcare #ClinicalTrials #PatientRecruitment #HealthIT #ResearchOperations #PopulationHealth #MedicalInnovation #CritMatch #ClinicalInformatics</div>
                 </CollapsibleNotice>
               <SectionEyebrow>CritMatch</SectionEyebrow>
