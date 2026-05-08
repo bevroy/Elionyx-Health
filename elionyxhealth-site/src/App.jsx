@@ -1,4 +1,24 @@
 import React, { useState } from 'react';
+function CollapsibleNotice({ title, children }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <div className='mb-8 rounded-2xl border border-teal-300 bg-teal-50 p-6 shadow'>
+      <button
+        type='button'
+        className='flex w-full items-center justify-between text-lg font-bold text-teal-900 mb-2 focus:outline-none'
+        onClick={() => setOpen((v) => !v)}
+        aria-expanded={open}
+        aria-controls={`notice-content-${title.replace(/\s+/g, '')}`}
+      >
+        <span>{title}</span>
+        <span className={`transition-transform ${open ? 'rotate-180' : ''}`}>▼</span>
+      </button>
+      {open && (
+        <div id={`notice-content-${title.replace(/\s+/g, '')}`}>{children}</div>
+      )}
+    </div>
+  );
+}
 import {
   ArrowRight,
   ChevronRight,
@@ -429,8 +449,8 @@ export default function ElionyxHealthLandingPage() {
         </section>
 
         <section id='realdiag' className='bg-white py-20'>
-          <Container className='grid gap-14 lg:grid-cols-2 lg:items-center'>
-            <div className='overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 shadow-sm'>
+            <Container className='grid gap-14 lg:grid-cols-2 lg:items-center'>
+              <div className='overflow-hidden rounded-[2rem] border border-slate-200 bg-slate-50 p-4 shadow-sm'>
               <video
                 src='/ui/RealDiag-Product-Film.mp4'
                 className='h-auto w-full rounded-xl border border-slate-200 object-cover'
@@ -445,50 +465,49 @@ export default function ElionyxHealthLandingPage() {
             </div>
 
             <div>
-                <div className='mb-8 rounded-2xl border border-teal-300 bg-teal-50 p-6 shadow'>
-                  <div className='text-lg font-bold text-teal-900 mb-2'>RealDiag Validation Study Site Recruitment</div>
-                  <div className='italic text-teal-800 mb-3'>Elionyx Health, LLC</div>
-                  <p className='mb-2'>We are actively seeking clinical partner sites to participate in the formal validation study for <b>RealDiag</b> — an AI-enabled diagnostic decision support platform developed under Elionyx Health, LLC.</p>
-                  <p className='mb-2'>RealDiag is designed to support clinicians by improving diagnostic accuracy, referral precision, and guideline-aligned clinical decision-making across complex disease states.</p>
-                  <div className='mb-2'>We are currently recruiting:</div>
-                  <ul className='list-disc ml-6 mb-2 text-slate-800'>
-                    <li>Academic medical centers</li>
-                    <li>Health systems</li>
-                    <li>Community hospitals</li>
-                    <li>Specialty practices</li>
-                    <li>Research organizations</li>
-                    <li>Innovation-forward clinical groups</li>
-                  </ul>
-                  <div className='mb-2'>Participating validation sites will receive:</div>
-                  <ul className='list-none ml-0 mb-2 text-slate-800'>
-                    <li>✔ Unlimited RealDiag platform access for one full year</li>
-                    <li>✔ Early access to upcoming platform capabilities</li>
-                    <li>✔ Direct collaboration with the RealDiag development and clinical validation team</li>
-                    <li>✔ Opportunity for co-authorship/publication participation on validation outcomes</li>
-                    <li>✔ Recognition as an inaugural RealDiag validation partner site</li>
-                  </ul>
-                  <div className='mb-2'>Study objectives include:</div>
-                  <ul className='list-disc ml-6 mb-2 text-slate-800'>
-                    <li>Diagnostic accuracy validation</li>
-                    <li>Referral optimization assessment</li>
-                    <li>Workflow integration evaluation</li>
-                    <li>Clinical utility and usability analysis</li>
-                    <li>Health economic and operational impact assessment</li>
-                  </ul>
-                  <div className='mb-2'>We are especially interested in organizations with strengths in:</div>
-                  <ul className='list-disc ml-6 mb-2 text-slate-800'>
-                    <li>Neurology</li>
-                    <li>Primary care</li>
-                    <li>Emergency medicine</li>
-                    <li>Internal medicine</li>
-                    <li>Multi-specialty referral systems</li>
-                    <li>Clinical informatics</li>
-                    <li>AI/digital health innovation</li>
-                  </ul>
-                  <p className='mb-2'>If your organization is interested in participating in the validation process for next-generation diagnostic support technology, we would welcome a conversation.</p>
-                  <p className='mb-2'>Please comment below or send a direct message to learn more.</p>
-                  <div className='mt-2 text-xs text-teal-700'>#HealthcareInnovation #DigitalHealth #ClinicalResearch #ArtificialIntelligence #ClinicalDecisionSupport #HealthIT #Diagnostics #MedicalInnovation #RealWorldEvidence #ClinicalValidation #AIinHealthcare #RealDiag</div>
-                </div>
+              <CollapsibleNotice title='RealDiag Validation Study Site Recruitment'>
+                <div className='italic text-teal-800 mb-3'>Elionyx Health, LLC</div>
+                <p className='mb-2'>We are actively seeking clinical partner sites to participate in the formal validation study for <b>RealDiag</b> — an AI-enabled diagnostic decision support platform developed under Elionyx Health, LLC.</p>
+                <p className='mb-2'>RealDiag is designed to support clinicians by improving diagnostic accuracy, referral precision, and guideline-aligned clinical decision-making across complex disease states.</p>
+                <div className='mb-2'>We are currently recruiting:</div>
+                <ul className='list-disc ml-6 mb-2 text-slate-800'>
+                  <li>Academic medical centers</li>
+                  <li>Health systems</li>
+                  <li>Community hospitals</li>
+                  <li>Specialty practices</li>
+                  <li>Research organizations</li>
+                  <li>Innovation-forward clinical groups</li>
+                </ul>
+                <div className='mb-2'>Participating validation sites will receive:</div>
+                <ul className='list-none ml-0 mb-2 text-slate-800'>
+                  <li>✔ Unlimited RealDiag platform access for one full year</li>
+                  <li>✔ Early access to upcoming platform capabilities</li>
+                  <li>✔ Direct collaboration with the RealDiag development and clinical validation team</li>
+                  <li>✔ Opportunity for co-authorship/publication participation on validation outcomes</li>
+                  <li>✔ Recognition as an inaugural RealDiag validation partner site</li>
+                </ul>
+                <div className='mb-2'>Study objectives include:</div>
+                <ul className='list-disc ml-6 mb-2 text-slate-800'>
+                  <li>Diagnostic accuracy validation</li>
+                  <li>Referral optimization assessment</li>
+                  <li>Workflow integration evaluation</li>
+                  <li>Clinical utility and usability analysis</li>
+                  <li>Health economic and operational impact assessment</li>
+                </ul>
+                <div className='mb-2'>We are especially interested in organizations with strengths in:</div>
+                <ul className='list-disc ml-6 mb-2 text-slate-800'>
+                  <li>Neurology</li>
+                  <li>Primary care</li>
+                  <li>Emergency medicine</li>
+                  <li>Internal medicine</li>
+                  <li>Multi-specialty referral systems</li>
+                  <li>Clinical informatics</li>
+                  <li>AI/digital health innovation</li>
+                </ul>
+                <p className='mb-2'>If your organization is interested in participating in the validation process for next-generation diagnostic support technology, we would welcome a conversation.</p>
+                <p className='mb-2'>Please comment below or send a direct message to learn more.</p>
+                <div className='mt-2 text-xs text-teal-700'>#HealthcareInnovation #DigitalHealth #ClinicalResearch #ArtificialIntelligence #ClinicalDecisionSupport #HealthIT #Diagnostics #MedicalInnovation #RealWorldEvidence #ClinicalValidation #AIinHealthcare #RealDiag</div>
+              </CollapsibleNotice>
               <SectionEyebrow>RealDiag</SectionEyebrow>
               <SectionTitle>Real-time diagnostic intelligence</SectionTitle>
               <p className='mt-5 text-lg leading-8 text-slate-600'>
@@ -524,9 +543,8 @@ export default function ElionyxHealthLandingPage() {
 
         <section id='critmatch' className='bg-[#f4f6f7] py-20'>
           <Container className='grid gap-14 lg:grid-cols-2 lg:items-center'>
-            <div>
-                <div className='mb-8 rounded-2xl border border-teal-300 bg-teal-50 p-6 shadow'>
-                  <div className='text-lg font-bold text-teal-900 mb-2'>CritMatch Validation Study Site Recruitment</div>
+              <div>
+                <CollapsibleNotice title='CritMatch Validation Study Site Recruitment'>
                   <div className='italic text-teal-800 mb-3'>Elionyx Health, LLC</div>
                   <p className='mb-2'>We are seeking healthcare organizations and research sites to participate in the validation study for <b>CritMatch</b> — a clinical cohort identification and research matching platform developed by Elionyx Health, LLC.</p>
                   <p className='mb-2'>CritMatch is designed to help organizations identify eligible patient populations for clinical research and operational initiatives using intelligent EMR/EHR-based cohort discovery.</p>
@@ -575,7 +593,7 @@ export default function ElionyxHealthLandingPage() {
                   </ul>
                   <p className='mb-2'>If your organization is interested in participating in the validation of next-generation cohort discovery technology, please comment below or send a direct message.</p>
                   <div className='mt-2 text-xs text-teal-700'>#ClinicalResearch #DigitalHealth #HealthcareInnovation #AIinHealthcare #ClinicalTrials #PatientRecruitment #HealthIT #ResearchOperations #PopulationHealth #MedicalInnovation #CritMatch #ClinicalInformatics</div>
-                </div>
+                </CollapsibleNotice>
               <SectionEyebrow>CritMatch</SectionEyebrow>
               <SectionTitle>Smarter matches. Better trials. Real impact.</SectionTitle>
               <p className='mt-5 text-lg leading-8 text-slate-600'>
