@@ -95,9 +95,9 @@ function SectionEyebrow({ children }) {
   );
 }
 
-function SectionTitle({ children }) {
+function SectionTitle({ children, className = '' }) {
   return (
-    <h2 className='mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl'>
+    <h2 className={`mt-3 text-3xl font-semibold tracking-tight text-slate-950 sm:text-4xl ${className}`}>
       {children}
     </h2>
   );
@@ -331,7 +331,7 @@ export default function ElionyxHealthLandingPage() {
             <div className='rounded-3xl bg-gradient-to-br from-[#061f3a] to-[#1d5c50] px-8 py-14 shadow-2xl lg:px-14 lg:py-20'>
               <div className='grid gap-14 lg:grid-cols-[1.05fr_0.95fr] lg:items-center'>
                 <div>
-                  <span className='inline-block rounded-full bg-white/10 px-4 py-1.5 text-sm font-medium text-white/90 backdrop-blur-sm'>
+                  <span className='inline-block rounded-full bg-white/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.28em] text-white/90 backdrop-blur-sm'>
                     Clinical Intelligence Platform
                   </span>
                   <h1 className='mt-5 max-w-3xl text-5xl font-bold tracking-tight sm:text-6xl'>
@@ -641,7 +641,7 @@ export default function ElionyxHealthLandingPage() {
         <section id='outcomes' className='bg-[#041E42] py-20 text-white'>
           <Container>
             <SectionEyebrow>Outcomes</SectionEyebrow>
-            <SectionTitle>Designed to improve healthcare and enterprise outcomes.</SectionTitle>
+            <SectionTitle className='text-white'>Designed to improve healthcare and enterprise outcomes.</SectionTitle>
             <div className='mt-12 grid gap-6 md:grid-cols-2 xl:grid-cols-4'>
               {outcomes.map((item) => {
                 const Icon = item.icon;
