@@ -602,10 +602,17 @@ export default function ElionyxHealthLandingPage() {
 
               <div className='mt-8 grid gap-3'>
                 {[
-                  'Cohort discovery',
-                  'Protocol matching',
-                  'Recruitment acceleration',
-                  'Operational reporting',
+                  'ROIE opportunity intelligence',
+                  'RWD readiness profiling',
+                  'Community referral network tools',
+                  'Navigator barrier-resolution workspace',
+                  'Equity scorecards and conversion analytics',
+                  'Cohort builder and criteria matching',
+                  'Studies workspace and protocol operations',
+                  'Feasibility workflows',
+                  'EDC workflows',
+                  'Finance (CTFMS)',
+                  'Cross-workflow operational results',
                 ].map((item) => (
                   <div key={item} className='flex items-center gap-3 rounded-2xl border border-slate-200 bg-white px-4 py-3'>
                     <Users className='h-4 w-4 text-teal-600' />
