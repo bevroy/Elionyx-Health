@@ -597,7 +597,7 @@ export default function ElionyxHealthLandingPage() {
               <SectionEyebrow>CritMatch</SectionEyebrow>
               <SectionTitle>Smarter matches. Better trials. Real impact.</SectionTitle>
               <p className='mt-5 text-lg leading-8 text-slate-600'>
-                CritMatch is being developed as a cohort discovery and patient matching workflow for research recruitment, protocol eligibility, and operational reporting.
+                CritMatch with CRAN (Community Research Access Network) helps health systems, researchers, and sponsors find eligible participants from within the EHR while supporting feasibility and study operations.
               </p>
 
               <div className='mt-8 grid gap-3'>
