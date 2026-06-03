@@ -370,7 +370,13 @@ export default function ElionyxHealthLandingPage() {
                     </div>
 
                     <div className='grid gap-4 md:grid-cols-2'>
-                      <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
+                      <a
+                        href='https://www.critmatchresearch.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        aria-label='Open CritMatch website'
+                        className='block rounded-2xl border border-slate-200 bg-slate-50 p-3 transition hover:border-teal-400 hover:shadow-sm'
+                      >
                         <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
                           CritMatch
                         </div>
@@ -379,9 +385,15 @@ export default function ElionyxHealthLandingPage() {
                           alt='CritMatch logo'
                           className='h-48 w-full rounded-xl border border-slate-200 bg-white p-6 object-contain'
                         />
-                      </div>
+                      </a>
 
-                      <div className='rounded-2xl border border-slate-200 bg-slate-50 p-3'>
+                      <a
+                        href='https://www.realdiag.com'
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        aria-label='Open RealDiag website'
+                        className='block rounded-2xl border border-slate-200 bg-slate-50 p-3 transition hover:border-teal-400 hover:shadow-sm'
+                      >
                         <div className='mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500'>
                           RealDiag
                         </div>
@@ -390,7 +402,7 @@ export default function ElionyxHealthLandingPage() {
                           alt='RealDiag logo'
                           className='h-48 w-full rounded-xl border border-slate-200 bg-white p-6 object-contain'
                         />
-                      </div>
+                      </a>
                     </div>
                   </div>
                 </div>
